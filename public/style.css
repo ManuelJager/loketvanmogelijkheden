@@ -1,11 +1,3 @@
-:root {
-  --main-brand-color: rgb(60, 170, 255);
-  --secondary-brand-color: rgb(200,200,200);
-  --tertiary-brand-color: rgb(220,220,220);
-  --header-height: 0px;
-  --secondary-brand-color-grad: linear-gradient(141deg, #ccc 25%, #eee 50%, #ddd 75%);
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -21,9 +13,9 @@ body {
 Header styles
 -----------*/
 header {
-  height: var(--header-height);
+  height: 0px;
   width: 100%;
-  background: var(--secondary-brand-color-grad);
+  background: linear-gradient(141deg, #ccc 25%, #eee 50%, #ddd 75%);
   position: relative;
 }
 
@@ -77,14 +69,32 @@ fixed header styles
   height: 100%;
   width: 150px;
   margin: 0 5px;
-  background-color: var(--main-brand-color);
+  background-color: #3caaff;
   -webkit-animation: fade-in 2s ease forwards;
           animation: fade-in 2s ease forwards;
 }
 
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 #fixed-header-wrapper > div > .fixed-header-button-background {
   position: absolute;
-  background-color: var(--tertiary-brand-color);
+  background-color: gainsboro;
   width: 100%;
   height: 100%;
   -webkit-transform-origin: left;
@@ -95,7 +105,7 @@ fixed header styles
   transition: 0.3s;
 }
 
-#fixed-header-wrapper > div:hover > .fixed-header-button-background {
+#fixed-header-wrapper > div > .fixed-header-button-background:hover {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
 }
@@ -113,7 +123,7 @@ fixed header styles
 
 #landing-wrapper {
   width: 100vw;
-  height: calc(100vh - var(--header-height));
+  height: calc(100vh - 0px);
   position: relative;
 }
 
@@ -145,11 +155,33 @@ fixed header styles
   position: absolute;
   width: 100%;
   height: 100%;
-  background: var(--tertiary-brand-color);
+  background: gainsboro;
   -webkit-transform-origin: left;
           transform-origin: left;
   -webkit-animation: scaleX-in 1s ease forwards;
           animation: scaleX-in 1s ease forwards;
+}
+
+@-webkit-keyframes scaleX-in {
+  from {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  to {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+
+@keyframes scaleX-in {
+  from {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  to {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
 }
 
 #landing-title-container {
@@ -173,23 +205,6 @@ fixed header styles
   white-space: nowrap;
   cursor: default;
   margin: 0 3px;
-}
-
-.landing-text:first-of-type {
-  -webkit-animation: showup 1s;
-          animation: showup 1s;
-}
-
-.landing-text:last-of-type {
-  -webkit-animation: reveal 7s;
-          animation: reveal 7s;
-  width: 470px;
-}
-
-.landing-text:last-of-type > span {
-  -webkit-animation: slidein 7s;
-          animation: slidein 7s;
-  margin-left: 0px;
 }
 
 @-webkit-keyframes showup {
@@ -276,51 +291,28 @@ fixed header styles
   }
 }
 
+.landing-text:first-of-type {
+  -webkit-animation: showup 1s;
+          animation: showup 1s;
+}
+
+.landing-text:last-of-type {
+  -webkit-animation: reveal 7s;
+          animation: reveal 7s;
+  width: 470px;
+}
+
+.landing-text:last-of-type > span {
+  -webkit-animation: slidein 7s;
+          animation: slidein 7s;
+  margin-left: 0px;
+}
+
 #main-content {
   position: absolute;
   width: 100%;
   height: 2000px;
-  background-color: var(--tertiary-brand-color);
-}
-
-@-webkit-keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes scaleX-in {
-  from {
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
-  }
-  to {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-  }
-}
-
-@keyframes scaleX-in {
-  from {
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
-  }
-  to {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-  }
+  background-color: gainsboro;
 }
 
 /*--------------------
