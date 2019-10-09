@@ -2,74 +2,74 @@
     width: 100vw;
     height: calc(100vh - #{$header-height});
     position: relative;
-}
-#landing-background {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-image: url('https://i0.wp.com/westernslopewebdesignco.com/wp-content/uploads/2016/03/Blurred-Background-Sunset-3c-Free.jpg?zoom=2.625&fit=3648%2C2736&ssl=1');
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-}
-#landing-title-wrapper {
-    @include center();
-    position: absolute;
-    height: fit-content;
-    width: fit-content;
-}
-#landing-title-background {
-    @keyframes scaleX-in {
-        from {transform: scaleX(0);}
-        to {transform: scaleX(1);}
+    #landing-background {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-image: url('https://i0.wp.com/westernslopewebdesignco.com/wp-content/uploads/2016/03/Blurred-Background-Sunset-3c-Free.jpg?zoom=2.625&fit=3648%2C2736&ssl=1');
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
     }
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: $tertiary-brand-color;
-    transform-origin: left;
-    animation: scaleX-in 1s ease forwards;
-}
-#landing-title-container {
-    position: relative;
-    font-size: 30px;
-    width: fit-content;
-    margin: 20px calc(30px + 3vw);
-    text-align: center;
-    display: flex;
-    align-content: center;
-}
-.landing-text {
-    @keyframes showup {
-        from {opacity:0;}
-        to {opacity:1;}
-    }
-    @keyframes slidein {
-        0% {margin-left:-800px;}
-        20% {margin-left:-800px;}
-        30% {margin-left:0px;}
-        100% {margin-left:0px;}
-    }
-    @keyframes reveal {
-        0% {opacity:0;width:0px;}
-        20% {opacity:1;width:0px;}
-        30% {width:470px;}
-        100% {opacity:1;width:470px;}
-    }
-    display:inline-block;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor: default;
-    margin: 0 3px;
-    &:first-of-type {
-        animation: showup 1s;
-    }
-    &:last-of-type {
-        animation: reveal 7s;
-        width:470px;
-        > span {
-            animation: slidein 7s;
-            margin-left:0px;
+    #landing-title-wrapper {
+        @include center();
+        position: absolute;
+        height: fit-content;
+        width: fit-content;
+        #landing-title-background {
+            @keyframes scaleX-in {
+                from {transform: scaleX(0);}
+                to {transform: scaleX(1);}
+            }
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: $grey-1;
+            transform-origin: left;
+            animation: scaleX-in 1s ease forwards;
+        }
+        #landing-title-container {
+            position: relative;
+            font-size: 30px;
+            width: fit-content;
+            margin: 20px calc(30px + 3vw);
+            text-align: center;
+            display: flex;
+            align-content: center;
+            .landing-text {
+                @keyframes showup {
+                    from {opacity:0;}
+                    to {opacity:1;}
+                }
+                @keyframes slidein {
+                    0% {margin-left:-800px;}
+                    20% {margin-left:-800px;}
+                    30% {margin-left:0px;}
+                    100% {margin-left:0px;}
+                }
+                @keyframes reveal {
+                    0% {opacity:0;width:0px;}
+                    20% {opacity:1;width:0px;}
+                    30% {width:470px;}
+                    100% {opacity:1;width:470px;}
+                }
+                display:inline-block;
+                overflow:hidden;
+                white-space:nowrap;
+                cursor: default;
+                margin: 0 3px;
+                &:first-of-type {
+                    animation: showup 1s;
+                }
+                &:last-of-type {
+                    animation: reveal 7s;
+                    width:470px;
+                    > span {
+                        animation: slidein 7s;
+                        margin-left:0px;
+                    }
+                }
+            }
         }
     }
 }
