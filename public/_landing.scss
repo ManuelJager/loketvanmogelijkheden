@@ -2,7 +2,7 @@
     width: 100vw;
     height: calc(100vh - #{$header-height});
     position: relative;
-    #landing-background {
+    > #landing-background {
         position: absolute;
         height: 100%;
         width: 100%;
@@ -11,12 +11,12 @@
         background-attachment: fixed;
         background-size: cover;
     }
-    #landing-title-wrapper {
+    > #landing-title-wrapper {
         @include center();
         position: absolute;
         height: fit-content;
         width: fit-content;
-        #landing-title-background {
+        > #landing-title-background {
             @keyframes scaleX-in {
                 from {transform: scaleX(0);}
                 to {transform: scaleX(1);}
@@ -28,7 +28,7 @@
             transform-origin: left;
             animation: scaleX-in 1s ease forwards;
         }
-        #landing-title-container {
+        > #landing-title-container {
             position: relative;
             font-size: 30px;
             width: fit-content;
@@ -36,7 +36,7 @@
             text-align: center;
             display: flex;
             align-content: center;
-            .landing-text {
+            > .landing-text {
                 @keyframes showup {
                     from {opacity:0;}
                     to {opacity:1;}
