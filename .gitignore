@@ -11,8 +11,8 @@
 
 # misc
 .env
-.css
-.css.map
+/.css
+/.css.map
 
 npm-debug.log*
 yarn-debug.log*
