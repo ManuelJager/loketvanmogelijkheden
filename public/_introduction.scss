@@ -1,6 +1,33 @@
-#main-content {
-    position: absolute;
+
+/*----------  introduction styles  ----------*/
+
+
+#introduction-wrapper {
+    position: relative;
     width: 100%;
     height: 2000px;
     background-color: $grey-1;
+    > .responsive-container {
+        height: fit-content;
+        padding: 5px;
+        width: 100%;
+        background-color: $grey-2;
+        display: flex;
+        justify-content: space-evenly;
+        > .introduction-item {
+            height: 200px;
+            width: 300px;
+            margin: 5px;
+            background-color: $main-brand-color;
+        }
+        @media screen and (max-width: 940px) {
+            flex-direction: column;
+            align-items: center;
+            > .introduction-item {
+                width: 50%;
+            }
+        }
+    }
 }
+
+
