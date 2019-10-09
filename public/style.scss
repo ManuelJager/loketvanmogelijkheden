@@ -1,17 +1,14 @@
-:root {
-    --main-brand-color: rgb(60, 170, 255);
-    --secondary-brand-color: rgb(200,200,200);
-    --tertiary-brand-color: rgb(220,220,220);
-    --header-height: 0px;
-    --secondary-brand-color-grad: linear-gradient(141deg, #ccc 25%, #eee 50%, #ddd 75%);
-}
+$main-brand-color: rgb(60, 170, 255);
+$secondary-brand-color: rgb(200,200,200);
+$tertiary-brand-color: rgb(220,220,220);
+$header-height: 0px;
+$secondary-brand-color-grad: linear-gradient(141deg, #ccc 25%, #eee 50%, #ddd 75%);
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Poppins', sans-serif;
 }
@@ -24,7 +21,6 @@ header {
     background: var(--secondary-brand-color-grad);
     position: relative;
 }
-
 #header-block-1 {
     position: absolute;
     width: 150%;
@@ -36,7 +32,6 @@ header {
     transform: rotate(6.75deg);
     z-index: 3;
 }
-
 #header-block-2{
     position: absolute;
     width: 100%;
@@ -60,47 +55,45 @@ fixed header styles
     display: flex;
     align-content: flex-start;
     z-index: 4;
+    > div {
+        @keyframes fade-in {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        position: relative;
+        height: 100%;
+        width: 150px;
+        margin: 0 5px;
+        background-color: var(--main-brand-color);
+        animation: fade-in 2s ease forwards;
+        > .fixed-header-button-background {
+            position: absolute;
+            background-color: var(--tertiary-brand-color);
+            width: 100%;
+            height: 100%;
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: 0.3s;
+            &:hover {
+                transform: scaleX(1)
+            }
+        }
+        > .text-wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            height: auto;
+            width: auto;
+            cursor: default;
+        }
+    }
 }
-
-#fixed-header-wrapper > div {
-    position: relative;
-    height: 100%;
-    width: 150px;
-    margin: 0 5px;
-    background-color: var(--main-brand-color);
-    animation: fade-in 2s ease forwards;
-}
-
-#fixed-header-wrapper > div > .fixed-header-button-background {
-    position: absolute;
-    background-color: var(--tertiary-brand-color);
-    width: 100%;
-    height: 100%;
-    transform-origin: left;
-    transform: scaleX(0);
-    transition: 0.3s;
-}
-
-#fixed-header-wrapper > div:hover > .fixed-header-button-background {
-    transform: scaleX(1)
-}
-
-#fixed-header-wrapper > div > .text-wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    height: auto;
-    width: auto;
-    cursor: default;
-}
-
 #landing-wrapper {
     width: 100vw;
-    height: calc(100vh - var(--header-height));
+    height: calc(100vh - $header-height);
     position: relative;
 }
-
 #landing-background {
     position: absolute;
     height: 100%;
@@ -110,7 +103,6 @@ fixed header styles
     background-attachment: fixed;
     background-size: cover;
 }
-
 #landing-title-wrapper {
     position: absolute;
     top: 50%;
@@ -119,16 +111,18 @@ fixed header styles
     height: fit-content;
     width: fit-content;
 }
-
 #landing-title-background {
+    @keyframes scaleX-in {
+        from {transform: scaleX(0);}
+        to {transform: scaleX(1);}
+    }
     position: absolute;
     width: 100%;
     height: 100%;
-    background: var(--tertiary-brand-color);
+    background: $tertiary-brand-color;
     transform-origin: left;
     animation: scaleX-in 1s ease forwards;
 }
-
 #landing-title-container {
     position: relative;
     font-size: 30px;
@@ -138,66 +132,46 @@ fixed header styles
     display: flex;
     align-content: center;
 }
-
 .landing-text {
+    @keyframes showup {
+        from {opacity:0;}
+        to {opacity:1;}
+    }
+    @keyframes slidein {
+        0% {margin-left:-800px;}
+        20% {margin-left:-800px;}
+        30% {margin-left:0px;}
+        100% {margin-left:0px;}
+    }
+    @keyframes reveal {
+        0% {opacity:0;width:0px;}
+        20% {opacity:1;width:0px;}
+        30% {width:470px;}
+        100% {opacity:1;width:470px;}
+    }
     display:inline-block;
     overflow:hidden;
     white-space:nowrap;
     cursor: default;
     margin: 0 3px;
+    &:first-of-type {
+        animation: showup 1s;
+    }
+    &:last-of-type {
+        animation: reveal 7s;
+        width:470px;
+        > span {
+            animation: slidein 7s;
+            margin-left:0px;
+        }
+    }
 }
-
-.landing-text:first-of-type {
-    animation: showup 1s;
-}
-
-.landing-text:last-of-type {
-    animation: reveal 7s;
-    width:470px;
-}
-
-.landing-text:last-of-type > span {
-    animation: slidein 7s;
-    margin-left:0px;
-}
-
-@keyframes showup {
-    from {opacity:0;}
-    to {opacity:1;}
-}
-
-@keyframes slidein {
-    0% {margin-left:-800px;}
-    20% {margin-left:-800px;}
-    30% {margin-left:0px;}
-    100% {margin-left:0px;}
-}
-
-@keyframes reveal {
-    0% {opacity:0;width:0px;}
-    20% {opacity:1;width:0px;}
-    30% {width:470px;}
-    100% {opacity:1;width:470px;}
-}
-
-
 #main-content {
     position: absolute;
     width: 100%;
     height: 2000px;
-    background-color: var(--tertiary-brand-color);
+    background-color: $tertiary-brand-color;
 }
-
-@keyframes fade-in {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
-@keyframes scaleX-in {
-    from {transform: scaleX(0);}
-    to {transform: scaleX(1);}
-}
-
 /*--------------------
 remove ugly scrollbars
 --------------------*/
