@@ -74,9 +74,7 @@ fixed header styles
             transform-origin: left;
             transform: scaleX(0);
             transition: 0.3s;
-            &:hover {
-                transform: scaleX(1)
-            }
+            
         }
         > .text-wrapper {
             position: absolute;
@@ -86,6 +84,9 @@ fixed header styles
             height: auto;
             width: auto;
             cursor: default;
+        }
+        &:hover > .fixed-header-button-background {
+        transform: scaleX(1)
         }
     }
 }
