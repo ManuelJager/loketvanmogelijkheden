@@ -15,10 +15,45 @@
         display: flex;
         justify-content: space-evenly;
         > .introduction-item {
+            $size: 80px;
+            $topleft: 5px;
+            position: relative;
             height: 200px;
             width: 300px;
             margin: 5px;
             background-color: $main-brand-color;
+            > .introduction-item-icon-wrapper {
+                position: absolute; 
+                height: $size;
+                width: $size;
+                top: $topleft;
+                left: $topleft;
+                background-color: white;
+                > .introduction-item-icon-box {
+                    > .introduction-item-icon {
+
+                    }
+                }    
+            }
+            > .introduction-item-title-wrapper {
+                $shift: calc(#{$size} + (#{$topleft * 2}));
+                position: absolute;
+                top: $topleft;
+                left: $shift;
+                width: calc(100% - #{$shift});
+                height: calc($size);
+                > .introduction-item-title {
+                    font-size: 28px;
+                    &::after {
+                        content: "WIE ZIJN WIJ?";
+                    }
+                }
+            }
+            > .introduction-item-description-wrapper {
+                > .introduction-item-description {
+
+                }
+            }
         }
         @media screen and (max-width: 940px) {
             flex-direction: column;
