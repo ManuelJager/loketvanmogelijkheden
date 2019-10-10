@@ -1,0 +1,140 @@
+/*------- contact form -------*/
+
+#contact-wrapper {
+    width: 100vw;
+    height: calc(100vh - #{$header-height});
+    position: relative;
+    > #contact-background {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-image: url('https://i0.wp.com/westernslopewebdesignco.com/wp-content/uploads/2016/03/Blurred-Background-Sunset-3c-Free.jpg?zoom=2.625&fit=3648%2C2736&ssl=1');
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+        > #form-outer-box {
+            width: 60%;
+            height: 390px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 12%;
+            border: 2px dotted red;
+            margin-bottom: 2%;
+            p {
+                font-size: 200%;
+                font-family: 'Poppins', sans-serif;
+                justify-content: center;
+                margin-left: auto;
+                margin-right: auto;
+                display: flex;
+            }
+            > #form-inner-box-left {
+                float: left;
+                border: 2px dotted blue;
+                width: 50%;
+                height: 88%;
+                left: auto;
+                right: auto;
+                > #contact-form-left {
+                    margin-left: 5vw;
+                    margin-right: auto;
+                    height: 47%;
+                    width: 20%;
+                    display: block;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    position: absolute;
+                    border: 2px dotted black;
+                    input {
+                        font-size: 90%;
+                        font-family: 'Poppins', sans-serif;
+                        padding: 6%;
+                        margin-top: 3%;
+                        margin-bottom: 3%;
+                        margin-left: auto;
+                        margin-right: auto;
+                        display: block;
+                        background-color: $main-brand-color;
+                        opacity: 1;
+                        border: none;
+                        text-align: center;
+                        border-radius: 10px;
+                        position: relative;
+                        float: middle;
+                    }
+                }
+            }
+            > #form-inner-box-right{
+                float: left;
+                border: 2px dotted greenyellow;
+                width: 50%;
+                height: 88%;
+                left: auto;
+                right: auto;
+                > #contact-form-right {
+                    display: block;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    position: absolute;
+                    border: 2px dotted purple;
+                    input {
+                        font-size: 90%;
+                        font-family: 'Poppins', sans-serif;
+                        padding: 6%;
+                        margin-top: 3%;
+                        margin-bottom: 3%;
+                        margin-left: auto;
+                        margin-right: auto;
+                        display: block;
+                        background-color: $main-brand-color;
+                        opacity: 1;
+                        border: none;
+                        text-align: center;
+                        border-radius: 10px;
+                        position: relative;
+                        float: middle;
+                    }
+                    textarea {
+                        font-size: 90%;
+                        font-family: 'Poppins', sans-serif;
+                        padding: 6%;
+                        margin-top: 5%;
+                        margin-bottom: 5%;
+                        margin-left: auto;
+                        margin-right: auto;
+                        display: block;
+                        background-color: $main-brand-color;
+                        opacity: 1;
+                        border: none;
+                        text-align: center;
+                        align-items: center;
+                        border-radius: 10px;
+                        position: relative;
+                        float: middle;
+                    }
+                }
+            }
+            button {
+                font-size: 110%;
+                font-family: 'Poppins', sans-serif;
+                justify-content: center;
+                margin-top: 2%;
+                margin-left: auto;
+                margin-right: auto;
+                display: flex;
+                padding: 2% 4%;
+                border: 0;
+                outline: 0;
+                color: black;
+                background-color: $main-brand-color;
+                text-transform: uppercase;
+                border-radius: 10px;
+                float: middle;
+                overflow: hidden;
+                position: relative;
+                margin-bottom: 7%;
+                cursor: pointer;
+            }
+        }
+    }
+}
