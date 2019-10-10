@@ -28,6 +28,14 @@ header {
         background: $grey-3;
         transform: rotate(-12.76deg);
         z-index: 1;
+        img {
+            position: absolute;
+            width: 10%;
+            height: auto;
+            left: 3%;
+            top: 4%;
+            z-index: 2;
+        }
     }
 }
 
