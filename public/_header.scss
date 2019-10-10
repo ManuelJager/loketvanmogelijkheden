@@ -28,16 +28,28 @@ header {
         background: $grey-3;
         transform: rotate(-12.76deg);
         z-index: 1;
-        img {
-            position: absolute;
-            width: 10%;
-            height: auto;
-            left: 3%;
-            top: 4%;
-            z-index: 2;
-        }
     }
 }
+/*---------- logo in header, fixed op beeld --------*/
+
+#logo-header-1 {
+    position: fixed;
+    width: 8%;
+    height: auto;
+    left: 3%;
+    top: 2%;
+    z-index: 2;
+    display: flex;
+    align-content: flex-start;
+    opacity: 1;
+}
+/*-------- button, let it work --------*/
+
+.button-header {
+    text-decoration: none;
+    color: black;
+}
+
 
 /*----------  fixed header styles  ----------*/
 
