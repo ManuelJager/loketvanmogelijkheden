@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST['Submit'])) {
+if (isset($_POST['submit'])) {
     $naam = $_POST['naam'];
     $mail = $_POST['mail'];
     $straat = $_POST['straat'];
@@ -11,7 +11,7 @@ if (isset($_POST['Submit'])) {
 
     $mailTo = "";
     $headers = "Van: ".$mailFrom;
-    $txt = "U hebt een nieuw bericht ontvangen van "$naam.".\n\n.$bericht;
+    $txt = "U hebt een nieuw bericht ontvangen van "$naam.".\n\n".$bericht;
 
     mail($mailTo, $onderwerp, $txt, $headers);
     header("Location: index.php?mailSend");
